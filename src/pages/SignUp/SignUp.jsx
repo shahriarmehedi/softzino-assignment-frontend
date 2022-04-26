@@ -39,7 +39,7 @@ const SignUp = () => {
                 setUserName();
 
                 // SAVE USER TO DATABASE
-                saveUser(email, name, 'POST');
+                saveUser(email, name);
 
                 Swal.fire({
                     position: 'top-end',
@@ -49,7 +49,6 @@ const SignUp = () => {
                     timer: 1500
                 });
                 navigate('/dashboard/main');
-                window.location.reload();
             }).catch(error => {
                 const errorMessage = error.message;
                 setError(errorMessage);
@@ -69,10 +68,11 @@ const SignUp = () => {
 
 
     // SAVE USER TO DATABASE
-    const saveUser = (email, displayName, method) => {
+    const saveUser = (email, displayName) => {
+        console.log("reached here");
         const user = { email, displayName };
         fetch('https://softzino-backend.herokuapp.com/users', {
-            method: method,
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },

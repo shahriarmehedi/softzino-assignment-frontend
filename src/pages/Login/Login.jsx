@@ -62,7 +62,7 @@ const Login = () => {
         <>
             <Header />
             <h2 className='text-4xl font-bold pt-28 text-center'>Login</h2>
-            <div className="w-5/6 mb-14 md:w-1/2 lg:w-1/4 mx-auto py-16 mt-10 bg-gray-200 rounded-box">
+            <div className="w-5/6 mb-64 md:w-1/2 lg:w-1/4 mx-auto pt-16 pb-12 mt-10 bg-gray-200 rounded-box">
                 <form onSubmit={handleSignIn}>
                     <div className="form-control w-3/4 md:w-2/3 mx-auto ">
                         <label className="label">
